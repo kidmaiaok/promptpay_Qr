@@ -55,12 +55,14 @@ session_start();
                     </div>
                 </form>
                 <div class="box1_qr">
-                    <?php if(isset($_SESSION['error'])){ ?>
+                    <?php 
+                    // if(isset($_SESSION['error'])){ ?>
                         <div class="error_sessin-Qr">
-                            <?php echo $_SESSION['error'];
-                            unset($_SESSION['error']); ?>
+                            <?php 
+                            // echo $_SESSION['error'];
+                            // unset($_SESSION['error']); ?>
                         </div>
-                    <?php } ?>
+                    <?php #} ?>
                     <h1>Scan to Pay</h1>
                     <?php
                     require __DIR__ . '/vendor/autoload.php'; // Include Composer's autoloader
@@ -68,8 +70,9 @@ session_start();
                     if(isset($_POST['submit_amount'])){
                         if(empty($_POST['amount_n']) || $_POST['amount_n'] == 0){
                             if(empty($_POST['amount_n']) || $_POST['amount_n'] == 0){
-                                $_SESSION['error'] = "***กรุณากรอกจำนวนเงิน";
-                                header('location: index');
+                                // $_SESSION['error'] = "***กรุณากรอกจำนวนเงิน";
+                                // unset($_SESSION['error']);
+                                // header('location: index');
                             }
                         }else{
                             $stramount = $_POST['amount_n'];
