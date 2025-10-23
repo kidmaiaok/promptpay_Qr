@@ -162,15 +162,18 @@ session_start();
                             // $payload = $pp->generatePayload($target, $amount);
 
                             // Define the path to save the QR code image
-                            $savePath = './images/qrcode.png'; // Or any other suitable path
+                            // $savePath = './images/qrcode.png'; // Or any other suitable path
+                            $saveimag = 'nat03.png';
 
                             // Generate the QR code image
                             // You can also specify the width of the QR code image (e.g., 500 for 500 pixels)
                             $width = 500;
-                            $pp->generateQrCode($savePath, $target, $amount, $width);
+                            // $pp->generateQrCode($savePath, $target, $amount, $width);
+                            $pp->generateQrCode($target, $amount, $width);
                     ?>
                             <p><?php echo "จำนวนเงิน : $amount บาท"; ?></p>
-                            <img src="<?php echo $savePath; ?>" alt="PromptPay QR Code">
+                            <!-- <img src="<?php #echo $savePath; ?>" alt="PromptPay QR Code"> -->
+                            <img src="<?php echo $saveimag; ?>" alt="PromptPay QR Code">
                         <?php }
                     }else{} ?>
                 </div>
