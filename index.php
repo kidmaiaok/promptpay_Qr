@@ -169,10 +169,12 @@ session_start();
                             $width = 500;
                             $pp->generateQrCode($savePath, $target, $amount, $width);
                     ?>
-                            <p><?php echo "จำนวนเงิน : $amount บาท"; ?></p>
+                            <!-- <p><?php #echo "จำนวนเงิน : $amount บาท"; ?></p> -->
                             <!-- <img src="<?php #echo $savePath; ?>" alt="PromptPay QR Code"> -->
                         <?php }
                     }else{} ?>
+                    <p><?php echo "จำนวนเงิน : $amount บาท"; ?></p>
+                            <img src="<?php echo $savePath; ?>" alt="PromptPay QR Code">
                 </div>
                 
                 <div class="box2_qr">
