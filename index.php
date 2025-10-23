@@ -163,7 +163,7 @@ session_start();
 
                             // Define the path to save the QR code image
                             // $savePath = './images/qrcode.png'; // Or any other suitable path
-                            $saveimag = 'nat03.png';
+                            // $saveimag = 'nat03.png';
 
                             // Generate the QR code image
                             // You can also specify the width of the QR code image (e.g., 500 for 500 pixels)
@@ -173,10 +173,12 @@ session_start();
                     ?>
                             <p><?php echo "จำนวนเงิน : $amount บาท"; ?></p>
                             <!-- <img src="<?php #echo $savePath; ?>" alt="PromptPay QR Code"> -->
-                            <img src="<?php echo $saveimag; ?>" alt="PromptPay QR Code">
+                            
                         <?php }
                     }else{} ?>
                 </div>
+
+                <img src="nat03.png" alt="PromptPay QR Code">
                 
                 <div class="box2_qr">
                     <input type="file" name="qrprompt" id="">
