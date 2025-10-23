@@ -1,9 +1,4 @@
-<?php
-session_start();
-?>
-
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>PromptPay QR Code</title>
     <style type="text/css">
