@@ -1,9 +1,0 @@
-caddy
-{
-  frankenphp
-}
-
-localhost {
-  root * public
-  php_server
-}
