@@ -125,7 +125,7 @@ session_start();
                     <h1>Scan to Pay</h1>
                     <?php
                     require __DIR__ . '/vendor/autoload.php'; // Include Composer's autoloader
-                    use KS\PromptPay;
+                    // use \KS\PromptPay;
                     if(isset($_POST['submit_amount'])){
                         if(empty($_POST['amount_n']) || $_POST['amount_n'] == 0){
                             //กรุณากรอกจำนวนเงิน
@@ -152,7 +152,7 @@ session_start();
                             $roundamount = round($decimalNumber, 2); // Round to 2 decimal places
                             // echo $roundedNumber; // Output: 123.46
 
-                            $pp = new PromptPay();
+                            $pp = new \KS\PromptPay();
                             
                             // Define PromptPay ID (phone number or national ID) and optional amount
                             $target = '0992203806'; // Example phone number
