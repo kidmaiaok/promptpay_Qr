@@ -109,10 +109,10 @@ session_start();
     <div class="box_qr_main">
         <div class="box_qr_content">
             <div>
-                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form_qr">
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get" class="form_qr">
                     <div class="box3_qr">
                         amount <input type="text" name="amount_n"  placeholder="">
-                        <button type="submit" name="submit_amount">ยืนยัน</button>
+                        <button type="submit" name="1">ยืนยัน</button>
                     </div>
                 </form>
                 <div class="box1_qr">
@@ -126,10 +126,10 @@ session_start();
                     <?php
                     require __DIR__ . '/vendor/autoload.php'; // Include Composer's autoloader
                     // use \KS\PromptPay;
-                    if(isset($_POST['submit_amount'])){
-                        if(empty($_POST['amount_n']) || $_POST['amount_n'] == 0){
+                    if(isset($_GET['1'])){
+                        if(empty($_GET['amount_n']) || $_GET['amount_n'] == 0){
                             //กรุณากรอกจำนวนเงิน
-                            if(empty($_POST['amount_n']) || $_POST['amount_n'] == 0){
+                            if(empty($_GET['amount_n']) || $_GET['amount_n'] == 0){
                                 // if($_POST['amount_n'] == 0){
                                 //     $x=$_POST['amount_n'] = 0;
                                 // }elseif(empty($_POST['amount_n'])){
@@ -140,7 +140,7 @@ session_start();
                                 header('location: index');
                             }
                         }else{
-                            $stramount = $_POST['amount_n'];
+                            $stramount = $_GET['amount_n'];
                             // $number = $stramount;
                             // $stringNumber = (string)$number; // Convert to string
                             // $limitamount = substr($stringNumber, 0, 5); // Get first 5 characters
@@ -173,12 +173,12 @@ session_start();
                     ?>
                             <p><?php echo "จำนวนเงิน : $amount บาท"; ?></p>
                             <!-- <img src="<?php #echo $savePath; ?>" alt="PromptPay QR Code"> -->
-                            
+                            <img src="nat03.png" alt="PromptPay QR Code">
                         <?php }
                     }else{} ?>
                 </div>
 
-                <img src="nat03.png" alt="PromptPay QR Code">
+                
                 
                 <div class="box2_qr">
                     <input type="file" name="qrprompt" id="">
